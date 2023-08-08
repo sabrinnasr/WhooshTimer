@@ -1,3 +1,5 @@
+var clickSound = new Audio("sounds/click.wav")
+
 var hours=0
 var minutes=0
 var seconds=0
@@ -6,15 +8,17 @@ var interval
 
 var isRunning = false
 
-function twoDigits(digit){
-    if(digit<10) {
+function twoDigits(digit) {
+    if (digit<10) {
         return('0'+digit)
-    }else {
+    } else {
         return(digit)
     }
 }
 
-function start(){
+function start() {
+    clickSound.play();
+
     if (!isRunning) {
         watch()
         interval= setInterval(watch,1000)
@@ -22,12 +26,14 @@ function start(){
     }
 }
 
-function pause(){
+function pause() {
+    clickSound.play();
     clearInterval(interval);
     isRunning = false
 }
 
-function restart(){
+function restart() {
+    clickSound.play();
     clearInterval(interval);
     hours=0
     minutes=0
@@ -36,7 +42,7 @@ function restart(){
     isRunning = false
 }
 
-function watch(){
+function watch() {
     seconds++
     if(seconds==60){
         minutes++
@@ -46,5 +52,6 @@ function watch(){
             hours++
         }
     }
+
     document.getElementById('watch').innerText=twoDigits(hours)+':'+twoDigits(minutes)+':'+twoDigits(seconds);
 }
