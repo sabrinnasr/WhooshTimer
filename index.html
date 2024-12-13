@@ -13,26 +13,32 @@
     
 </head>
 <body>
-<div>
-    <h1>Stop Watch</h1>
-    <button class="start-btn" onclick="start()">
-        <img class="player-icons" src="icons/start.svg" alt="" width="30px">
-    </button>
-    <button class="pause-btn" onclick="pause()">
-        <img class="player-icons" src="icons/pause.svg" alt="" width="30px">
-    </button>
-    <button class="restart-btn" onclick="restart()">
-        <img class="player-icons" src="icons/restart.svg" alt="" width="30px">
-    </button>
+<div class="container">
+   <div class="icons">
+        <h1>Stop Watch</h1>
+        <button class="start-btn" onclick="start()">
+            <img class="player-icons" src="icons/start.svg" alt="" width="30px">
+        </button>
+        <button class="pause-btn" onclick="pause()">
+            <img class="player-icons" src="icons/pause.svg" alt="" width="30px">
+        </button>
+        <button class="restart-btn" onclick="restart()">
+            <img class="player-icons" src="icons/restart.svg" alt="" width="30px">
+        </button>
+    </div>
 
-    <!-- <button class="save-btn">Save</button> -->
-</div>
-
-<main>   
     <div class="timer">
         <h2 id="watch">00:00:00</h2>
     </div>
-</main>
+
+    <div class="laps">
+        <h2>Turns: <span id="lapCount">0</span></h2>
+        <div id="lapsList"></div>
+    </div>
+
+</div>  
+
+
 
 <script src="script.js"></script>
    

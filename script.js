@@ -55,3 +55,57 @@ function watch() {
 
     document.getElementById('watch').innerText=twoDigits(hours)+':'+twoDigits(minutes)+':'+twoDigits(seconds);
 }
+
+let lapTimes = [];
+
+function saveTime() {
+    clickSound.play();
+
+    if (hours === 0 && minutes === 0 && seconds === 0) {
+        alert("Cannot save 00:00:00 time!");
+        return;
+    }
+}
+
+function pause() {
+    clickSound.play();
+    clearInterval(interval);
+    isRunning = false;
+
+    if (hours !== 0 || minutes !== 0 || seconds !== 0) {
+        let currentTime = `${twoDigits(hours)}h ${twoDigits(minutes)}m ${twoDigits(seconds)}s`;
+        
+        lapTimes.unshift(currentTime);
+
+        if (lapTimes.length > 3) {
+            lapTimes.pop();
+        }
+
+        updateLapTimes();
+    }
+}
+
+function resetTimer() {
+    hours = 0;
+    minutes = 0;
+    seconds = 0;
+
+    document.getElementById('watch').innerText = '00:00:00';
+    isRunning = false;
+}
+
+function updateLapTimes() {
+    let lapsList = document.getElementById('lapsList');
+    let lapCount = document.getElementById('lapCount');
+
+    lapsList.innerHTML = '';  
+
+    lapCount.textContent = lapTimes.length;
+
+    lapTimes.forEach((time, index) => {
+        let lapItem = document.createElement('div');
+        lapItem.className = 'lap-item';
+        lapItem.innerHTML = `<span>${index + 1}</span><span>${time}</span>`;
+        lapsList.appendChild(lapItem);
+    });
+}

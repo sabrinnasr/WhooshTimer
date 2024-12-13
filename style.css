@@ -1,33 +1,42 @@
 * {
-    font-family: orbitron;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+
 body {
-    background-color: black;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    align-items: center;
+    height: 100%; 
+    background-color: #0f0f0f; 
+    font-family: 'Orbitron', sans-serif; 
+    color: white; 
 }
 
-h1 {
-   color: white;
-}
-
-div {
+.container {
     text-align: center;
-    font-size: 15px;
-    margin-bottom: 25px;
+    width: 80%;
+    max-width: 600px; 
+    padding: 20px;
 }
 
-h2 {
-    /* text-align: center; */
-    color: white;
+.icons h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
 }
 
 button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
     width: 5em;
     border: 2.5px solid;
     border-color: rgb(13, 163, 205); 
     border-radius: 50px;
-    background-color: black;
-    transition: 0.5s;
-    outline: 0;
+    margin: 10px;
 }
 
 button:hover {
@@ -35,43 +44,61 @@ button:hover {
     background-color: rgb(32, 167, 204);
 }
 
-.timer {
-    font-size: 20px;
-    border: 2.5px solid;
-    border-color: rgb(32, 167, 204); 
-    border-radius: 50px;
-    height: 40px;
-    padding: 10px 20px;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    width: 30%;
-    margin-left: 32%;
-    min-width: 175px;
+.player-icons {
+    filter: brightness(0) invert(1); 
+    transition: transform 0.2s ease-in-out;
+}
+
+button:hover .player-icons {
+    transform: scale(1.2); 
 }
 
 .timer h2 {
-    margin-top: 0px;
+    font-size: 3rem;
+    margin: 20px 0;
+    color: white;
+    border: 2.5px solid;
+    border-color: rgb(32, 167, 204); 
+    border-radius: 50px;
 }
 
-.player-icons {
-    margin-top: 3px;
+.laps h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
 }
 
-.start-btn {
-    background-color: black;
+.laps {
+    margin-top: 20px;
+    font-family: 'Orbitron', sans-serif;
+    color: rgb(32, 167, 204); 
 }
 
-.pause-btn {
-    background-color: black;
+.laps h2 {
+    padding: 8px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    text-transform: uppercase;
+    text-align: left;
 }
 
-.restart-btn {
-    background-color: black;
+#lapCount {
+    color: white;
 }
 
+.laps div {
+    border-top: 1px solid #444;
+}
 
-/* .save-btn {
-  background-color: black;
-} */ 
+.laps .lap-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #444;
+    font-size: 16px;
+}
+
+.laps .lap-item span {
+    font-size: 16px;
+    color: rgb(32, 167, 204); 
+}
+
