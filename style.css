@@ -99,6 +99,59 @@ button:hover .player-icons {
 
 .laps .lap-item span {
     font-size: 16px;
-    color: rgb(32, 167, 204); 
 }
 
+.time-unit {
+    color: white;
+}
+
+.tasks {
+    margin-top: 20px;
+    font-family: 'Orbitron', sans-serif;
+    color: rgb(32, 167, 204); 
+    height: 150px;
+}
+
+.tasks h2 {
+    padding: 8px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    text-transform: uppercase;
+    text-align: left;
+}
+
+#taskList {
+    border-top: 1px solid #444;
+}
+
+.tasks .task-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #444;
+    font-size: 16px;
+}
+
+.tasks .task-item span {
+    font-size: 16px;
+}
+
+#tasksCount {
+    color: white;
+}
+
+.tasks .task-index {
+    /* color: white; */
+    color: rgb(32, 167, 204);
+}
+
+.tasks .task-title {
+    flex: 1;
+    text-align: left;
+    margin-left: 10px;
+    color: rgb(32, 167, 204);
+}
+
+.tasks .task-time {
+    color: rgb(32, 167, 204);
+}

@@ -25,10 +25,21 @@
         <button class="restart-btn" onclick="restart()">
             <img class="player-icons" src="icons/restart.svg" alt="" width="30px">
         </button>
+        <button class="save-btn" onclick="saveTime()">
+            <img class="player-icons" src="icons/save.svg" alt="" width="30px">
+        </button>
+        <button class="delete-btn" onclick="deleteTime()">
+            <img class="player-icons" src="icons/trash.svg" alt="" width="30px">
+        </button>
     </div>
 
     <div class="timer">
         <h2 id="watch">00:00:00</h2>
+    </div>
+
+    <div class="tasks">
+        <h2>Tasks: <span id="tasksCount">0</span></h2>
+        <div id="taskList"></div>
     </div>
 
     <div class="laps">
@@ -37,8 +48,6 @@
     </div>
 
 </div>  
-
-
 
 <script src="script.js"></script>
    
