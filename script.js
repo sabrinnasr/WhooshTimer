@@ -63,7 +63,7 @@ function saveTime() {
 
     if (hours === 0 && minutes === 0 && seconds === 0) {
         alert("Cannot save 00:00:00 time!")
-        return;
+        return
     }
 }
 
@@ -108,7 +108,7 @@ function updateLapTimes() {
     
         let formattedTime = time.replace(/(h|m|s)/g, '<span class="time-unit">$1</span>')
     
-        lapItem.innerHTML = `<span>${index + 1}</span><span>${formattedTime}</span>`;
+        lapItem.innerHTML = `<span class="time-unit">${index + 1}</span><span>${formattedTime}</span>`;
         
         lapsList.appendChild(lapItem)
     });

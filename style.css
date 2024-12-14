@@ -141,8 +141,7 @@ button:hover .player-icons {
 }
 
 .tasks .task-index {
-    /* color: white; */
-    color: rgb(32, 167, 204);
+    color: white;
 }
 
 .tasks .task-title {
