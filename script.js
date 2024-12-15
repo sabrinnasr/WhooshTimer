@@ -181,16 +181,32 @@ function updateTasks() {
 function deleteTime() {
     clickSound.play();
 
-    if (confirm("Are you sure you wanna delete your last task?")) {
-        if (tasks.length === 0) {
-            alert("There's no turns to delete!");
-            return;
-        }
+    if (tasks.length === 0) {
+        alert("There's no tasks to delete!");
+        return;
+    }
 
-        tasks.shift();
+    let taskList = tasks
+        .map((task, index) => `${index + 1}. ${task.title} (${task.time})`)
+        .join("\n");
 
+    let userInput = prompt(
+        `Select the task number you want to delete:\n\n${taskList}`
+    );
+
+    let taskIndex = parseInt(userInput) - 1;
+
+    if (isNaN(taskIndex) || taskIndex < 0 || taskIndex >= tasks.length) {
+        alert("Invalid selection. No tasks were deleted.");
+        return;
+    }
+
+    if (confirm(`Are you sure you want to delete this task?\n\n${tasks[taskIndex].title} (${tasks[taskIndex].time})`)) {
+        tasks.splice(taskIndex, 1); 
         updateTasks();
+        alert("Task deleted successfully!");
     } else {
         console.log("Deletion has been cancelled");
     }
 }
+
