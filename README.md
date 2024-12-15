@@ -1,5 +1,6 @@
 ### Screenshots:
-![image](https://github.com/user-attachments/assets/a6cc3762-5d14-4841-93aa-55e0566e5601)
+![image](https://github.com/user-attachments/assets/b4b5e494-8088-4294-b2dc-69af58e935f1)
+
 
 ### Description:
 
